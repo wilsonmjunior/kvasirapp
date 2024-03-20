@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "kvasirapp",
+    "slug": "kvasirapp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
