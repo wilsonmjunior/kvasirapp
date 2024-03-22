@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     padding: 22,
   },
   title: {
-    fontFamily: 'Roboto_700Bold',
+    fontFamily: THEME.FONTS.BOLD,
     color: THEME.COLORS.WHITE,
     fontSize: 18,
     textAlign: 'center',

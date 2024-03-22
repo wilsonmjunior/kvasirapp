@@ -1,17 +1,16 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
+import { Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
+import { useFonts } from "expo-font";
 
 import { Routes } from './src/routes';
 import { Loading } from './src/components/Loading';
 
 export default function App() {
-  const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
-
-  if (!fontsLoaded) {
-    return (
-      <Loading />
-    );
+  const [fontsLoaded, fontError] = useFonts({ Roboto_400Regular, Roboto_700Bold });
+  
+  if (!fontsLoaded && !fontError) {
+    return <Loading />
   }
 
   return (

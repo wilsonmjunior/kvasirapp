@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     color: THEME.COLORS.BRAND_MID,
-    fontFamily: 'Roboto_700Bold',
+    fontFamily: THEME.FONTS.BOLD,
     fontSize: 16
   }
 });
