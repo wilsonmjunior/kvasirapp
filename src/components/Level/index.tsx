@@ -1,9 +1,11 @@
-import { Pressable, PressableProps, Text, View } from 'react-native';
+import { useEffect } from 'react';
+import { Pressable, PressableProps } from 'react-native';
+import Animated, { interpolateColor, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
 
 import { THEME } from '../../styles/theme';
+import CustomAnimated from '../CustomAnimated';
+
 import { styles } from './styles';
-import Animated, { Easing, interpolateColor, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
-import { useEffect } from 'react';
 
 const TYPE_COLORS = {
   EASY: THEME.COLORS.BRAND_LIGHT,
@@ -55,26 +57,23 @@ export function Level({ title, type = 'EASY', isChecked = false, ...rest }: Prop
   }, [isChecked])
 
   return (
-    <Pressable
+    <CustomAnimated.Pressable
       onPressIn={onPressIn}
       onPressOut={onPressOut}
+      style={[
+        styles.container,
+        animatedContainerStyle,
+        { borderColor: COLOR, }
+      ]}
       {...rest}
     >
-      <Animated.View style={
+      <Animated.Text style={
         [
-          styles.container,
-          animatedContainerStyle,
-          { borderColor: COLOR, }
-        ]
-      }>
-        <Animated.Text style={
-          [
-            styles.title,
-            animatedTextStyle,
-          ]}>
-          {title}
-        </Animated.Text>
-      </Animated.View>
-    </Pressable>
+          styles.title,
+          animatedTextStyle,
+        ]}>
+        {title}
+      </Animated.Text>
+    </CustomAnimated.Pressable>
   );
 }
