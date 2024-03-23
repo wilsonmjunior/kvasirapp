@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Pressable, PressableProps } from 'react-native';
+import { PressableProps } from 'react-native';
 import Animated, { interpolateColor, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
 
 import { THEME } from '../../styles/theme';
