@@ -1,21 +1,12 @@
-import axios, { AxiosError, AxiosInstance } from "axios";
+import axios from "axios";
 
 import { IResponse } from "../types";
 
 import { decrypt } from "../../utils/cryptor";
 
-const REQUEST_TIMEOUT = 4 * 10 * 1000;
-
-type SignOut = () => void;
-
-type APIInstanceProps = AxiosInstance & {
-  registerInterceptTokenManager(signOut: SignOut): () => void;
-};
-
 const api = axios.create({
   baseURL: process.env.EXPO_PUBLIC_API_URL,
-  // timeout: REQUEST_TIMEOUT,
-}) as APIInstanceProps;
+});
 
 api.interceptors.response.use(
   async (response) => {
