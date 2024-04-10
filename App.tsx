@@ -5,11 +5,14 @@ import { useFonts } from "expo-font";
 
 import { Routes } from './src/routes';
 import { Loading } from './src/components/Loading';
+import { useLoadKeys } from './src/hooks/loadKeys';
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({ Roboto_400Regular, Roboto_700Bold });
   
-  if (!fontsLoaded && !fontError) {
+  const { privateKey } = useLoadKeys();
+
+  if (!fontsLoaded && !fontError && !privateKey) {
     return <Loading />
   }
 

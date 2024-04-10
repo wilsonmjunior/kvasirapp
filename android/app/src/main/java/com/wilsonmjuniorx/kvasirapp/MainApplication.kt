@@ -1,4 +1,4 @@
-package com.kvasirapp
+package com.wilsonmjuniorx.kvasirapp
 
 import android.app.Application
 import android.content.res.Configuration

@@ -1,4 +1,4 @@
-package com.kvasirapp
+package com.wilsonmjuniorx.kvasirapp
 
 import android.os.Build
 import android.os.Bundle
