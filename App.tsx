@@ -13,6 +13,9 @@ export default function App() {
     return <Loading />
   }
 
+  console.warn('Font loading: ',fontsLoaded, fontError);
+  
+
   return (
     <>
       <StatusBar
